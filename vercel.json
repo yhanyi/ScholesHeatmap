@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "black_scholes.py", "use": "@vercel/python" },
+    { "src": "package.json", "use": "@vercel/next" }
+  ],
+  "routes": [
+    { "src": "/api/black-scholes", "dest": "black_scholes.py" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ],
+  "env": {
+    "PYTHONUNBUFFERED": "1"
+  }
+}
